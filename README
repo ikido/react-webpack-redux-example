@@ -10,3 +10,25 @@ develop a small UI to view stories from InkSkill data feed.
 
 
 Please build the UI based on a single page app model. The UI should include:
+
+1) *Story list*: provide a list of stories from the feed with a preview image, title, tags and
+description. The image and title should link to a single story view. Only show stories that
+are published.
+
+2) *Sorting and filtering*: You must include functionality to filter and sort stories in the story
+list view. Filtering and sorting should be done by clicking on checkboxes located either
+on the left or right side of the list of stories. Functionality should include:
+    a) Sort by published date, toggle by oldest and newest.
+    b) Toggle stories by author. A list of authors should show on the list of checkboxes. Clicking on the checkbox should show stories by the selected author.
+    c) Toggle stories by Issue. A list of issues should show in the list of checkboxes. Clicking on the checkbox should show stories with the selected issue.
+    d) Filter stories by tags. Get a list of tags from all of the stories in the feed, show the lists of tags sorted alphabetically. Add checkboxes for each tag to show only stories with the selected tag,
+    
+3) *Story view*: show the full article with a large image at the top, title, tags and body content. The story view can be a separate page or a modal over the
+list view.
+
+4) Make the UI look better than the original wireframe.
+
+wireframe:
+
+1) Story view: https://www.dropbox.com/s/k5iivt5e9o2n00y/Screenshot%202016-04-24%2003.14.09.png
+2) List View: https://www.dropbox.com/s/oz6s6lkw9d3hp4i/Screenshot%202016-04-24%2003.15.04.png
