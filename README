@@ -3,7 +3,7 @@ develop a small UI to view stories from InkSkill data feed.
 1) Feed will be based on json added in repo (api/data.json)
 2) frameworks: reactJS, webpack, es6, redux, scss, bootstrap, mocha 
 3) Use UI framework "Bootstrap".
-4) use a task runner to do. 
+4) add task runner to do. 
   - `npm run dev` (load/launch local and open browser)
   - `npm run test` (mocha test)
   - `npm run lint` (js and scss)
@@ -11,11 +11,11 @@ develop a small UI to view stories from InkSkill data feed.
 
 Please build the UI based on a single page app model. The UI should include:
 
-1) *Story list*: provide a list of stories from the feed with a preview image, title, tags and
+1) Story list: provide a list of stories from the feed with a preview image, title, tags and
 description. The image and title should link to a single story view. Only show stories that
 are published.
 
-2) *Sorting and filtering*: You must include functionality to filter and sort stories in the story
+2) Sorting and filtering: You must include functionality to filter and sort stories in the story
 list view. Filtering and sorting should be done by clicking on checkboxes located either
 on the left or right side of the list of stories. Functionality should include:
     a) Sort by published date, toggle by oldest and newest.
@@ -23,10 +23,12 @@ on the left or right side of the list of stories. Functionality should include:
     c) Toggle stories by Issue. A list of issues should show in the list of checkboxes. Clicking on the checkbox should show stories with the selected issue.
     d) Filter stories by tags. Get a list of tags from all of the stories in the feed, show the lists of tags sorted alphabetically. Add checkboxes for each tag to show only stories with the selected tag,
     
-3) *Story view*: show the full article with a large image at the top, title, tags and body content. The story view can be a separate page or a modal over the
+3) Story view: show the full article with a large image at the top, title, tags and body content. The story view can be a separate page or a modal over the
 list view.
 
 4) Make the UI look better than the original wireframe.
+
+5) write mocha test
 
 wireframe:
 
