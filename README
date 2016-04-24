@@ -1,0 +1,12 @@
+develop a small UI to view stories from InkSkill data feed.
+
+1) Feed will be based on json added in repo (api/data.json)
+2) frameworks: reactJS, webpack, es6, redux, scss, bootstrap, mocha 
+3) Use UI framework "Bootstrap".
+4) use a task runner to do. 
+  - `npm run dev` (load/launch local and open browser)
+  - `npm run test` (mocha test)
+  - `npm run lint` (js and scss)
+
+
+Please build the UI based on a single page app model. The UI should include:
