@@ -11,7 +11,11 @@ export default class StoryList extends Component {
 
   render() {
     return (
-      <ListGroupItem>{ this.props.story.title }</ListGroupItem>
+      <ListGroupItem>
+      	{ this.props.story.title }
+      	<br />
+      	<small>{ new Date(this.props.story.date).toString() }</small>
+      </ListGroupItem>
     );
   }
 }

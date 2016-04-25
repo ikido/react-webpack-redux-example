@@ -1,5 +1,9 @@
 import { combineReducers } from 'redux';
-import { REQUEST_ALL_STORIES, RECEIVE_ALL_STORIES } from 'lib/actions';
+import {
+	REQUEST_ALL_STORIES,
+	RECEIVE_ALL_STORIES,
+	SET_STORIES_SORT_ORDER
+} from 'lib/actions';
 
 function stories(state = [], action) {
   switch (action.type) {
@@ -10,6 +14,15 @@ function stories(state = [], action) {
   }
 }
 
-const rootReducer = combineReducers({ stories });
+function storiesSortOrder(state = 'oldest', action) {
+	switch (action.type) {
+    case SET_STORIES_SORT_ORDER:
+      return action.sortOrder
+    default:
+      return state;
+  }
+}
+
+const rootReducer = combineReducers({ stories, storiesSortOrder });
 
 export default rootReducer

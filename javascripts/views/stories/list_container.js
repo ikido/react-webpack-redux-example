@@ -3,9 +3,13 @@ import StoryList from 'views/stories/list';
 import { fetchStories } from 'lib/actions';
 
 const mapStateToProps = (state) => {
-  return {
-    stories: state.stories
+  let stories = state.stories.sort((a,b) => a.date < b.date);
+
+  if (state.storiesSortOrder === 'oldest') {
+    stories = stories.slice().reverse();
   }
+
+  return { stories }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -16,9 +20,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-const VisibleStoryList = connect(
+const StoryListContainer = connect(
 	mapStateToProps,
 	mapDispatchToProps
 )(StoryList);
 
-export default VisibleStoryList
+export default StoryListContainer

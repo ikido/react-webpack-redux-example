@@ -1,7 +1,8 @@
-import fetch from 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch';
 
-export const REQUEST_ALL_STORIES = 'REQUEST_ALL_STORIES'
-export const RECEIVE_ALL_STORIES = 'RECEIVE_ALL_STORIES'
+export const REQUEST_ALL_STORIES = 'REQUEST_ALL_STORIES';
+export const RECEIVE_ALL_STORIES = 'RECEIVE_ALL_STORIES';
+export const SET_STORIES_SORT_ORDER = 'SET_STORIES_SORT_ORDER';
 
 function requestAllStories() {
   return {
@@ -13,6 +14,13 @@ function receiveAllStories(json) {
   return {
     type: RECEIVE_ALL_STORIES,
     stories: json
+  }
+}
+
+export function setStoriesSortOrder(sortOrder) {
+  return {
+    type: SET_STORIES_SORT_ORDER,
+    sortOrder: sortOrder
   }
 }
 

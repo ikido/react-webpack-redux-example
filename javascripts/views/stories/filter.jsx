@@ -1,19 +1,39 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Col from 'react-bootstrap/lib/Col';
-import Nav from 'react-bootstrap/lib/Nav';
-import NavItem from 'react-bootstrap/lib/NavItem';
+import FormGroup from 'react-bootstrap/lib/FormGroup';
+import ControlLabel from 'react-bootstrap/lib/ControlLabel';
+import Radio from 'react-bootstrap/lib/Radio';
 
 export default class StoryFilter extends Component {
+
+  static propTypes = {
+    sortOrder: PropTypes.oneOf(['oldest', 'newest']),
+    setSortOrder: PropTypes.func.isRequired
+  }
+
   render() {
     return (
       <Col sm={3} md={2} className='sidebar'>
-        <Nav bsStyle="pills" stacked activeKey={1}>
-          <NavItem eventKey={1} href="/home">NavItem 1 content</NavItem>
-          <NavItem eventKey={2} title="Item">NavItem 2 content</NavItem>
-          <NavItem eventKey={3} disabled>NavItem 3 content</NavItem>
-        </Nav>
+        <h2>Filters</h2>
+        <form>
+          <FormGroup>
+            <ControlLabel>Story date</ControlLabel>
+            <Radio
+              checked={ this.props.sortOrder === 'oldest' }
+              onChange={ this.props.setSortOrder.bind(this, 'oldest') }
+            >
+              Oldest first
+            </Radio>
+            <Radio
+              checked={ this.props.sortOrder === 'newest' }
+              onChange={ this.props.setSortOrder.bind(this, 'newest') }
+            >
+              Newest first
+            </Radio>
+          </FormGroup>
+        </form>
       </Col>
     );
   }
