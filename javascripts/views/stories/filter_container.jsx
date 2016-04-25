@@ -1,17 +1,28 @@
 import { connect } from 'react-redux';
 import StoryFilter from 'views/stories/filter';
-import { setStoriesSortOrder } from 'lib/actions';
+import {
+  setStoriesSortOrder,
+  setStoriesSelectedTags
+} from 'lib/actions';
+import uniq from 'lodash/uniq';
+import flatten from 'lodash/flatten';
 
 const mapStateToProps = (state) => {
   return {
-    sortOrder: state.storiesSortOrder
+    sortOrder: state.storiesSortOrder,
+    tags: uniq(flatten(state.stories.map(story => story.tags))),
+    selectedTags: state.storiesSelectedTags
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    setSortOrder: (sortOrder) => {
+    setSortOrder(sortOrder) {
       dispatch(setStoriesSortOrder(sortOrder))
+    },
+    setSelectedTags(tags) {
+      tags = !!tags ? tags : [];
+      dispatch(setStoriesSelectedTags(tags.map(t => t.value)))
     }
   }
 }

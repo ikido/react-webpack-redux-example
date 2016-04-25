@@ -2,7 +2,8 @@ import { combineReducers } from 'redux';
 import {
 	REQUEST_ALL_STORIES,
 	RECEIVE_ALL_STORIES,
-	SET_STORIES_SORT_ORDER
+	SET_STORIES_SORT_ORDER,
+  SET_STORIES_SELECTED_TAGS
 } from 'lib/actions';
 
 function stories(state = [], action) {
@@ -23,6 +24,19 @@ function storiesSortOrder(state = 'oldest', action) {
   }
 }
 
-const rootReducer = combineReducers({ stories, storiesSortOrder });
+function storiesSelectedTags(state = [], action) {
+  switch (action.type) {
+    case SET_STORIES_SELECTED_TAGS:
+      return action.tags
+    default:
+      return state;
+  }
+}
+
+const rootReducer = combineReducers({
+  stories,
+  storiesSortOrder,
+  storiesSelectedTags
+});
 
 export default rootReducer

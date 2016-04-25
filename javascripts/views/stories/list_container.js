@@ -1,10 +1,24 @@
 import { connect } from 'react-redux';
 import StoryList from 'views/stories/list';
 import { fetchStories } from 'lib/actions';
+import intersection from 'lodash/intersection';
 
 const mapStateToProps = (state) => {
-  let stories = state.stories.sort((a,b) => a.date < b.date);
 
+  let stories = state.stories;
+
+  // filter by tags
+  if (state.storiesSelectedTags.length > 0) {
+    stories = stories.filter(s => { 
+      return (intersection(state.storiesSelectedTags, s.tags).length > 0)
+    })
+  }
+
+
+  // sort by default
+  stories.sort((a,b) => a.date < b.date);
+
+  // reverse sort order if needed
   if (state.storiesSortOrder === 'oldest') {
     stories = stories.slice().reverse();
   }

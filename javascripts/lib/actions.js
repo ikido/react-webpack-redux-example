@@ -3,6 +3,7 @@ import fetch from 'isomorphic-fetch';
 export const REQUEST_ALL_STORIES = 'REQUEST_ALL_STORIES';
 export const RECEIVE_ALL_STORIES = 'RECEIVE_ALL_STORIES';
 export const SET_STORIES_SORT_ORDER = 'SET_STORIES_SORT_ORDER';
+export const SET_STORIES_SELECTED_TAGS = 'SET_STORIES_SELECTED_TAGS';
 
 function requestAllStories() {
   return {
@@ -10,17 +11,24 @@ function requestAllStories() {
   }
 }
 
-function receiveAllStories(json) {
+function receiveAllStories(stories) {
   return {
     type: RECEIVE_ALL_STORIES,
-    stories: json
+    stories
   }
 }
 
 export function setStoriesSortOrder(sortOrder) {
   return {
     type: SET_STORIES_SORT_ORDER,
-    sortOrder: sortOrder
+    sortOrder,
+  }
+}
+
+export function setStoriesSelectedTags(tags) {
+  return {
+    type: SET_STORIES_SELECTED_TAGS,
+    tags
   }
 }
 

@@ -18,7 +18,7 @@ export default class StoryList extends Component {
 
   render() {
     return (
-      <Col sm={9} smOffset={3} md={10} mdOffset={2} className='main'>
+      <Col sm={8} smOffset={4} md={9} mdOffset={3} className='main'>
         <ListGroup>
           { this.props.stories.map(story => 
             <ShowStory story={ story } key={ story.id } />
