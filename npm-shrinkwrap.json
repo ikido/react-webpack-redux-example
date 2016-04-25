@@ -1856,6 +1856,11 @@
       "from": "ee-first@1.1.1",
       "resolved": "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz"
     },
+    "encoding": {
+      "version": "0.1.12",
+      "from": "encoding@>=0.1.11 <0.2.0",
+      "resolved": "https://registry.npmjs.org/encoding/-/encoding-0.1.12.tgz"
+    },
     "enhanced-resolve": {
       "version": "0.9.1",
       "from": "enhanced-resolve@>=0.9.0 <0.10.0",
@@ -2860,6 +2865,11 @@
       "from": "hoek@>=2.0.0 <3.0.0",
       "resolved": "https://registry.npmjs.org/hoek/-/hoek-2.16.3.tgz"
     },
+    "hoist-non-react-statics": {
+      "version": "1.0.5",
+      "from": "hoist-non-react-statics@>=1.0.3 <2.0.0",
+      "resolved": "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-1.0.5.tgz"
+    },
     "home-or-tmp": {
       "version": "1.0.0",
       "from": "home-or-tmp@>=1.0.0 <2.0.0",
@@ -2889,6 +2899,11 @@
       "version": "0.0.0",
       "from": "https-browserify@0.0.0",
       "resolved": "https://registry.npmjs.org/https-browserify/-/https-browserify-0.0.0.tgz"
+    },
+    "iconv-lite": {
+      "version": "0.4.13",
+      "from": "iconv-lite@>=0.4.13 <0.5.0",
+      "resolved": "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.13.tgz"
     },
     "icss-replace-symbols": {
       "version": "1.0.2",
@@ -3037,6 +3052,11 @@
       "from": "is-property@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/is-property/-/is-property-1.0.2.tgz"
     },
+    "is-stream": {
+      "version": "1.1.0",
+      "from": "is-stream@>=1.0.1 <2.0.0",
+      "resolved": "https://registry.npmjs.org/is-stream/-/is-stream-1.1.0.tgz"
+    },
     "is-svg": {
       "version": "1.1.1",
       "from": "is-svg@>=1.1.1 <2.0.0",
@@ -3061,6 +3081,18 @@
           "version": "0.0.1",
           "from": "isarray@0.0.1",
           "resolved": "https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz"
+        }
+      }
+    },
+    "isomorphic-fetch": {
+      "version": "2.2.1",
+      "from": "isomorphic-fetch@latest",
+      "resolved": "https://registry.npmjs.org/isomorphic-fetch/-/isomorphic-fetch-2.2.1.tgz",
+      "dependencies": {
+        "whatwg-fetch": {
+          "version": "0.11.0",
+          "from": "whatwg-fetch@>=0.10.0",
+          "resolved": "https://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-0.11.0.tgz"
         }
       }
     },
@@ -3175,6 +3207,11 @@
       "version": "3.10.2",
       "from": "lodash-compat@>=3.10.1 <4.0.0",
       "resolved": "https://registry.npmjs.org/lodash-compat/-/lodash-compat-3.10.2.tgz"
+    },
+    "lodash-es": {
+      "version": "4.11.1",
+      "from": "lodash-es@>=4.2.1 <5.0.0",
+      "resolved": "https://registry.npmjs.org/lodash-es/-/lodash-es-4.11.1.tgz"
     },
     "lodash._baseassign": {
       "version": "3.2.0",
@@ -3407,6 +3444,11 @@
       "version": "0.6.0",
       "from": "negotiator@0.6.0",
       "resolved": "https://registry.npmjs.org/negotiator/-/negotiator-0.6.0.tgz"
+    },
+    "node-fetch": {
+      "version": "1.5.1",
+      "from": "node-fetch@>=1.0.1 <2.0.0",
+      "resolved": "https://registry.npmjs.org/node-fetch/-/node-fetch-1.5.1.tgz"
     },
     "node-libs-browser": {
       "version": "0.5.3",
@@ -3915,6 +3957,11 @@
       "from": "react-proxy@>=1.1.7 <2.0.0",
       "resolved": "https://registry.npmjs.org/react-proxy/-/react-proxy-1.1.8.tgz"
     },
+    "react-redux": {
+      "version": "4.4.5",
+      "from": "react-redux@latest",
+      "resolved": "https://registry.npmjs.org/react-redux/-/react-redux-4.4.5.tgz"
+    },
     "react-router": {
       "version": "2.0.1",
       "from": "react-router@>=2.0.1 <3.0.0",
@@ -3975,6 +4022,21 @@
           "resolved": "https://registry.npmjs.org/balanced-match/-/balanced-match-0.1.0.tgz"
         }
       }
+    },
+    "redux": {
+      "version": "3.5.2",
+      "from": "redux@latest",
+      "resolved": "https://registry.npmjs.org/redux/-/redux-3.5.2.tgz"
+    },
+    "redux-logger": {
+      "version": "2.6.1",
+      "from": "redux-logger@latest",
+      "resolved": "https://registry.npmjs.org/redux-logger/-/redux-logger-2.6.1.tgz"
+    },
+    "redux-thunk": {
+      "version": "2.0.1",
+      "from": "redux-thunk@latest",
+      "resolved": "https://registry.npmjs.org/redux-thunk/-/redux-thunk-2.0.1.tgz"
     },
     "regenerate": {
       "version": "1.2.1",
@@ -4225,6 +4287,11 @@
       "version": "0.6.4",
       "from": "svgo@>=0.6.1 <0.7.0",
       "resolved": "https://registry.npmjs.org/svgo/-/svgo-0.6.4.tgz"
+    },
+    "symbol-observable": {
+      "version": "0.2.3",
+      "from": "symbol-observable@>=0.2.3 <0.3.0",
+      "resolved": "https://registry.npmjs.org/symbol-observable/-/symbol-observable-0.2.3.tgz"
     },
     "tapable": {
       "version": "0.1.10",

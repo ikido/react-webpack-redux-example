@@ -1,33 +1,30 @@
 'use strict';
 
-import React, { Component } from 'react';
-import Row from 'react-bootstrap/lib/Row';
+import React, { Component, PropTypes } from 'react';
 import Col from 'react-bootstrap/lib/Col';
+import ListGroup from 'react-bootstrap/lib/ListGroup';
+import ShowStory from 'views/stories/show';
 
 export default class StoryList extends Component {
+
+	static propTypes = {
+		stories: PropTypes.array.isRequired,
+		fetchStories: PropTypes.func.isRequired
+	}
+
+	componentWillMount() {
+		this.props.fetchStories()
+	}
+
   render() {
     return (
-      <Row>
-        <Col sm={3} md={2} className='sidebar'>
-          <ul className="nav nav-sidebar">
-            <li><a href>Nav item</a></li>
-            <li><a href>Nav item again</a></li>
-            <li><a href>One more nav</a></li>
-            <li><a href>Another nav item</a></li>
-            <li><a href>More navigation</a></li>
-          </ul>
-          <ul className="nav nav-sidebar">
-            <li><a href>Nav item again</a></li>
-            <li><a href>One more nav</a></li>
-            <li><a href>Another nav item</a></li>
-          </ul>
-        </Col>
-        <Col sm={9} smOffset={3} md={10} mdOffset={2} className='main'>
-          <h1>Hello world</h1>
-        </Col>                    
-      </Row>
+      <Col sm={9} smOffset={3} md={10} mdOffset={2} className='main'>
+        <ListGroup>
+          { this.props.stories.map(story => 
+            <ShowStory story={ story } key={ story.id } />
+          )}
+        </ListGroup>
+      </Col>
     );
   }
 }
-
-
