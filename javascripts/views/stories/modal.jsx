@@ -31,8 +31,8 @@ export default class StoryModal extends Component {
         <h4 style={{ lineHeight: 1.5 }}>
           { this.props.story.tags.map((tag, i) => {
             return(
-              <span>
-                <Label key={i} bsStyle="default">{ tag }</Label>
+              <span key={i}>
+                <Label bsStyle="default">{ tag }</Label>
                 {' '}
               </span>
             )
