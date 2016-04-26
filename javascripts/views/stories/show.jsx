@@ -6,13 +6,14 @@ import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
 export default class StoryList extends Component {
 
 	static propTypes = {
-		story: PropTypes.object.isRequired
+		story: PropTypes.object.isRequired,
+    onClick: PropTypes.func.isRequired
 	}
 
   render() {
     return (
       <ListGroupItem>
-      	{ this.props.story.title }
+      	<a href="javascript:void(0)" onClick={ this.props.onClick }>{ this.props.story.title }</a>
       	<br />
       	<small>{ new Date(this.props.story.date).toString() }</small>
       </ListGroupItem>

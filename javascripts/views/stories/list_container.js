@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import StoryList from 'views/stories/list';
-import { fetchStories } from 'lib/actions';
+import { fetchStories, showStoryModal } from 'lib/actions';
 import intersection from 'lodash/intersection';
 
 const mapStateToProps = (state) => {
@@ -28,8 +28,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    fetchStories: () => {
+    fetchStories() {
       dispatch(fetchStories())
+    },
+    showStoryModal(storyId) {
+      dispatch(showStoryModal(storyId))
     }
   }
 }

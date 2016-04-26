@@ -3,7 +3,9 @@ import {
 	REQUEST_ALL_STORIES,
 	RECEIVE_ALL_STORIES,
 	SET_STORIES_SORT_ORDER,
-  SET_STORIES_SELECTED_TAGS
+  SET_STORIES_SELECTED_TAGS,
+  SHOW_STORY_MODAL,
+  HIDE_STORY_MODAL
 } from 'lib/actions';
 
 function stories(state = [], action) {
@@ -33,10 +35,23 @@ function storiesSelectedTags(state = [], action) {
   }
 }
 
+let defaultStoryModalState = { show: false, storyId: null }
+function storyModal(state = defaultStoryModalState, action) {
+  switch (action.type) {
+    case SHOW_STORY_MODAL:
+      return { show: true, storyId: action.storyId };
+    case HIDE_STORY_MODAL:
+      return defaultStoryModalState;
+    default:
+      return state;
+  }
+}
+
 const rootReducer = combineReducers({
   stories,
   storiesSortOrder,
-  storiesSelectedTags
+  storiesSelectedTags,
+  storyModal
 });
 
 export default rootReducer
