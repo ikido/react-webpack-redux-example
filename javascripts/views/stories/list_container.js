@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import StoryList from 'views/stories/list';
 import { fetchStories, showStoryModal } from 'lib/actions';
 import intersection from 'lodash/intersection';
+import includes from 'lodash/includes';
 
 const mapStateToProps = (state) => {
 
@@ -11,6 +12,20 @@ const mapStateToProps = (state) => {
   if (state.storiesSelectedTags.length > 0) {
     stories = stories.filter(s => { 
       return (intersection(state.storiesSelectedTags, s.tags).length > 0)
+    })
+  }
+
+  // filter by authors
+  if (state.storiesSelectedAuthors.length > 0) {
+    stories = stories.filter(s =>
+      includes(state.storiesSelectedAuthors, s.author.full_name)
+    )
+  }
+
+  // filter by issues
+  if (state.storiesSelectedIssues.length > 0) {
+    stories = stories.filter(s => {
+      return (intersection(state.storiesSelectedIssues, s.issue).length > 0)
     })
   }
 

@@ -4,6 +4,8 @@ export const REQUEST_ALL_STORIES = 'REQUEST_ALL_STORIES';
 export const RECEIVE_ALL_STORIES = 'RECEIVE_ALL_STORIES';
 export const SET_STORIES_SORT_ORDER = 'SET_STORIES_SORT_ORDER';
 export const SET_STORIES_SELECTED_TAGS = 'SET_STORIES_SELECTED_TAGS';
+export const SET_STORIES_SELECTED_AUTHORS = 'SET_STORIES_SELECTED_AUTHORS';
+export const SET_STORIES_SELECTED_ISSUES = 'SET_STORIES_SELECTED_ISSUES';
 export const SHOW_STORY_MODAL = 'SHOW_STORY_MODAL';
 export const HIDE_STORY_MODAL = 'HIDE_STORY_MODAL';
 
@@ -32,6 +34,20 @@ export function setStoriesSelectedTags(tags) {
   return {
     type: SET_STORIES_SELECTED_TAGS,
     tags
+  }
+}
+
+export function setStoriesSelectedAuthors(authors) {
+  return {
+    type: SET_STORIES_SELECTED_AUTHORS,
+    authors
+  }
+}
+
+export function setStoriesSelectedIssues(issues) {
+  return {
+    type: SET_STORIES_SELECTED_ISSUES,
+    issues
   }
 }
 

@@ -4,6 +4,8 @@ import {
 	RECEIVE_ALL_STORIES,
 	SET_STORIES_SORT_ORDER,
   SET_STORIES_SELECTED_TAGS,
+  SET_STORIES_SELECTED_AUTHORS,
+  SET_STORIES_SELECTED_ISSUES,
   SHOW_STORY_MODAL,
   HIDE_STORY_MODAL
 } from 'lib/actions';
@@ -35,6 +37,24 @@ function storiesSelectedTags(state = [], action) {
   }
 }
 
+function storiesSelectedAuthors(state = [], action) {
+  switch (action.type) {
+    case SET_STORIES_SELECTED_AUTHORS:
+      return action.authors;
+    default:
+      return state;
+  }
+}
+
+function storiesSelectedIssues(state = [], action) {
+  switch (action.type) {
+    case SET_STORIES_SELECTED_ISSUES:
+      return action.issues
+    default:
+      return state;
+  }
+}
+
 let defaultStoryModalState = { show: false, storyId: null }
 function storyModal(state = defaultStoryModalState, action) {
   switch (action.type) {
@@ -51,6 +71,8 @@ const rootReducer = combineReducers({
   stories,
   storiesSortOrder,
   storiesSelectedTags,
+  storiesSelectedAuthors,
+  storiesSelectedIssues,
   storyModal
 });
 

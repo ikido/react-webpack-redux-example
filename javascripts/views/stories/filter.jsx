@@ -13,12 +13,26 @@ export default class StoryFilter extends Component {
     sortOrder: PropTypes.oneOf(['oldest', 'newest']),
     setSortOrder: PropTypes.func.isRequired,
     tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+    authors: PropTypes.arrayOf(PropTypes.string).isRequired,
+    issues: PropTypes.arrayOf(PropTypes.string).isRequired,
     selectedTags: PropTypes.arrayOf(PropTypes.string).isRequired,
-    setSelectedTags: PropTypes.func.isRequired
+    selectedIssues: PropTypes.arrayOf(PropTypes.string).isRequired,
+    selectedAuthors: PropTypes.arrayOf(PropTypes.string).isRequired,
+    setSelectedTags: PropTypes.func.isRequired,
+    setSelectedAuthors: PropTypes.func.isRequired,
+    setSelectedIssues: PropTypes.func.isRequired
   }
 
   getTagOptions = () => {
     return this.props.tags.map(t => { return { value: t, label: t } })
+  }
+
+  getAuthorOptions = () => {
+    return this.props.authors.map(t => { return { value: t, label: t } })
+  }
+
+  getIssueOptions = () => {
+    return this.props.issues.map(t => { return { value: t, label: t } })
   }
 
   render() {
@@ -48,6 +62,24 @@ export default class StoryFilter extends Component {
               options={ this.getTagOptions() }
               onChange={ this.props.setSelectedTags }
               value={ this.props.selectedTags }
+            />
+          </FormGroup>
+          <FormGroup>
+            <ControlLabel>Authors</ControlLabel>
+            <Select
+              multi
+              options={ this.getAuthorOptions() }
+              onChange={ this.props.setSelectedAuthors }
+              value={ this.props.selectedAuthors }
+            />
+          </FormGroup>
+          <FormGroup>
+            <ControlLabel>Issues</ControlLabel>
+            <Select
+              multi
+              options={ this.getIssueOptions() }
+              onChange={ this.props.setSelectedIssues }
+              value={ this.props.selectedIssues }
             />
           </FormGroup>
         </form>
