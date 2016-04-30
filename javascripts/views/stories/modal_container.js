@@ -3,7 +3,7 @@ import StoryModal from 'views/stories/modal';
 import { hideStoryModal } from 'lib/actions';
 import find from 'lodash/find';
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   let show = state.storyModal.show;
   let id = state.storyModal.storyId;
   let story = id ? find(state.stories, { id }) : null;
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
   return { show, story };
 };
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     onHide() {
       dispatch(hideStoryModal());

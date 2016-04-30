@@ -6,8 +6,7 @@ import Button from 'react-bootstrap/lib/Button';
 import Label from 'react-bootstrap/lib/Label';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
-import Holder from 'react-holder';
-
+import Image from 'react-bootstrap/lib/Image';
 
 export default class StoryModal extends Component {
 
@@ -21,10 +20,7 @@ export default class StoryModal extends Component {
     return (
       <div>
         
-        <Holder
-          width="100%"
-          height="400"
-        />
+        <Image src="/img/thumbnail.png" thumbnail />
 
         <h1>{ this.props.story.title }</h1>
         

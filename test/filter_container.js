@@ -54,7 +54,6 @@ describe('FilterContainer', () => {
 			let sortOrder = 'oldest';
 			functions.setSortOrder(sortOrder);
 			expect(dispatch.calls[0].arguments[0]).toEqual(actions.setStoriesSortOrder(sortOrder))
-			
 	  });
 
 	  it('should correctly map setSelectedTags callback to dispatched action', () => {
