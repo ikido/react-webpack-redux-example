@@ -4,7 +4,7 @@ import { fetchStories, showStoryModal } from 'lib/actions';
 import intersection from 'lodash/intersection';
 import includes from 'lodash/includes';
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
 
   let stories = state.stories;
 
@@ -31,7 +31,7 @@ const mapStateToProps = (state) => {
 
 
   // sort by default
-  stories.sort((a, b) => a.date < b.date);
+  stories = stories.slice().sort((a, b) => a.date < b.date);
 
   // reverse sort order if needed
   if (state.storiesSortOrder === 'oldest') {
@@ -41,7 +41,7 @@ const mapStateToProps = (state) => {
   return { stories };
 };
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     fetchStories() {
       dispatch(fetchStories());
