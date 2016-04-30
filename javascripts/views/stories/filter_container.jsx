@@ -9,7 +9,7 @@ import {
 import uniq from 'lodash/uniq';
 import flatten from 'lodash/flatten';
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return {
     sortOrder: state.storiesSortOrder,
     tags: uniq(flatten(state.stories.map(story => story.tags))),
@@ -21,7 +21,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     setSortOrder(sortOrder) {
       dispatch(setStoriesSortOrder(sortOrder))

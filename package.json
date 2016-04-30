@@ -5,7 +5,7 @@
     "start": "rm -f dist/css/bundle* && node server.js",
     "build": "BABEL_ENV=production ./node_modules/.bin/webpack --config webpack.config.production.js",
     "lint": "./node_modules/.bin/eslint ./javascripts ./test",
-    "test": "NODE_PATH=$NODE_PATH:$PWD/javascripts mocha --compilers js:babel-register --recursive",
+    "test": "NODE_ENV=production NODE_PATH=$NODE_PATH:$PWD/javascripts mocha --compilers js:babel-register --recursive",
     "test:watch": "npm test -- --watch"
   },
   "dependencies": {
