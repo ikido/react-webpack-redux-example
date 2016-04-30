@@ -13,62 +13,62 @@ export const HIDE_STORY_MODAL = 'HIDE_STORY_MODAL';
 function requestAllStories() {
   return {
     type: REQUEST_ALL_STORIES
-  }
+  };
 }
 
 function receiveAllStories(stories) {
   return {
     type: RECEIVE_ALL_STORIES,
     stories
-  }
+  };
 }
 
 export function setStoriesSortOrder(sortOrder) {
   return {
     type: SET_STORIES_SORT_ORDER,
-    sortOrder,
-  }
+    sortOrder
+  };
 }
 
 export function setStoriesSelectedTags(tags) {
   return {
     type: SET_STORIES_SELECTED_TAGS,
     tags
-  }
+  };
 }
 
 export function setStoriesSelectedAuthors(authors) {
   return {
     type: SET_STORIES_SELECTED_AUTHORS,
     authors
-  }
+  };
 }
 
 export function setStoriesSelectedIssues(issues) {
   return {
     type: SET_STORIES_SELECTED_ISSUES,
     issues
-  }
+  };
 }
 
 export function fetchStories() {
   return dispatch => {
-    dispatch(requestAllStories())
+    dispatch(requestAllStories());
     return fetch('/api/data.json')
       .then(response => response.json())
-      .then(json => dispatch(receiveAllStories(json)))
-  }
+      .then(json => dispatch(receiveAllStories(json)));
+  };
 }
 
 export function showStoryModal(storyId) {
   return {
     type: SHOW_STORY_MODAL,
     storyId
-  }
+  };
 }
 
 export function hideStoryModal() {
   return {
     type: HIDE_STORY_MODAL
-  }
+  };
 }

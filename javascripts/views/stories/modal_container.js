@@ -8,20 +8,20 @@ const mapStateToProps = (state) => {
   let id = state.storyModal.storyId;
   let story = id ? find(state.stories, { id }) : null;
 
-  return { show, story }
-}
+  return { show, story };
+};
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     onHide() {
-      dispatch(hideStoryModal())
+      dispatch(hideStoryModal());
     }
-  }
-}
+  };
+};
 
 const StoryModalContainer = connect(
 	mapStateToProps,
 	mapDispatchToProps
 )(StoryModal);
 
-export default StoryModalContainer
+export default StoryModalContainer;

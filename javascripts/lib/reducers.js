@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
 import {
-	REQUEST_ALL_STORIES,
 	RECEIVE_ALL_STORIES,
 	SET_STORIES_SORT_ORDER,
   SET_STORIES_SELECTED_TAGS,
@@ -13,7 +12,7 @@ import {
 function stories(state = [], action) {
   switch (action.type) {
     case RECEIVE_ALL_STORIES:
-      return action.stories
+      return action.stories;
     default:
       return state;
   }
@@ -22,7 +21,7 @@ function stories(state = [], action) {
 function storiesSortOrder(state = 'oldest', action) {
 	switch (action.type) {
     case SET_STORIES_SORT_ORDER:
-      return action.sortOrder
+      return action.sortOrder;
     default:
       return state;
   }
@@ -31,7 +30,7 @@ function storiesSortOrder(state = 'oldest', action) {
 function storiesSelectedTags(state = [], action) {
   switch (action.type) {
     case SET_STORIES_SELECTED_TAGS:
-      return action.tags
+      return action.tags;
     default:
       return state;
   }
@@ -49,13 +48,13 @@ function storiesSelectedAuthors(state = [], action) {
 function storiesSelectedIssues(state = [], action) {
   switch (action.type) {
     case SET_STORIES_SELECTED_ISSUES:
-      return action.issues
+      return action.issues;
     default:
       return state;
   }
 }
 
-let defaultStoryModalState = { show: false, storyId: null }
+let defaultStoryModalState = { show: false, storyId: null };
 function storyModal(state = defaultStoryModalState, action) {
   switch (action.type) {
     case SHOW_STORY_MODAL:
@@ -76,4 +75,4 @@ const rootReducer = combineReducers({
   storyModal
 });
 
-export default rootReducer
+export default rootReducer;
