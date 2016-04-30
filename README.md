@@ -14,3 +14,9 @@ npm install
 
 ### Deploy
 `npm run build`, then deploy `/dist` folder
+
+### Lint
+`npm run lint`
+
+### Tests
+`npm test`

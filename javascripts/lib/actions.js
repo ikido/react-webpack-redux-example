@@ -51,10 +51,11 @@ export function setStoriesSelectedIssues(issues) {
   };
 }
 
-export function fetchStories() {
+// host added for testability with nock
+export function fetchStories(host = '') {
   return dispatch => {
     dispatch(requestAllStories());
-    return fetch('/api/data.json')
+    return fetch(host+'/api/data.json')
       .then(response => response.json())
       .then(json => dispatch(receiveAllStories(json)));
   };
