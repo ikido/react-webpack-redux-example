@@ -35,7 +35,9 @@
     "css-loader": "^0.23.1",
     "eslint": "^0.21.2",
     "eslint-plugin-react": "^2.3.0",
+    "node-sass": "^3.6.0",
     "react-transform-hmr": "^1.0.1",
+    "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.8.4",
     "webpack-dev-server": "^1.8.0"

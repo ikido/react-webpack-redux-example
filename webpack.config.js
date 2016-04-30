@@ -19,7 +19,7 @@ module.exports = {
       path.resolve(__dirname, "javascripts"),
       path.resolve(__dirname, "stylesheets")
     ],
-    extensions: ['', '.js', '.jsx', '.css']
+    extensions: ['', '.js', '.jsx', '.css', '.scss']
   },
   devtool: 'eval-source-map',
   plugins: [
@@ -34,8 +34,8 @@ module.exports = {
         loader: 'babel'
       },
       {
-        test: /\.css?$/,
-        loader: 'style-loader!css-loader'
+        test: /\.(css|scss)?$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader?sourceMap']
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,

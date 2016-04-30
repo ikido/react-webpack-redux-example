@@ -14,7 +14,7 @@ module.exports = {
       path.resolve(__dirname, "javascripts"),
       path.resolve(__dirname, "stylesheets")
     ],
-    extensions: ['', '.js', '.jsx', '.css']
+    extensions: ['', '.js', '.jsx', '.css', '.scss']
   },
   devtool: 'cheap-module-source-map',
   plugins: [
@@ -47,9 +47,9 @@ module.exports = {
         }      
       },
       {
-        test: /\.css?$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader?minimize")
-      },
+        test: /\.(css|scss)?$/,
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader?minimize", "sass-loader")
+      }
     ]
   }
 };
