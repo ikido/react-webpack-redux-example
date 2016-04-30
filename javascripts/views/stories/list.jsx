@@ -20,7 +20,7 @@ export default class StoryList extends Component {
 
   render() {
     return (
-      <Col sm={8} smOffset={4} md={9} mdOffset={3} className='main'>
+      <Col sm={8} smOffset={4} md={9} mdOffset={3} xs={12} className='main'>
         <StoryModalContainer />
         <ListGroup>
           { this.props.stories.map(story => 

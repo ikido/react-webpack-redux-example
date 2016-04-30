@@ -37,7 +37,7 @@ export default class StoryFilter extends Component {
 
   render() {
     return (
-      <Col sm={4} md={3} className='sidebar'>
+      <Col sm={4} md={3} xs={12} className='sidebar'>
         <h2>Filters</h2>
         <form>
           <FormGroup>
